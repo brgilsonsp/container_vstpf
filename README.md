@@ -40,7 +40,28 @@ Utilizando a ultima versão:
 
 ### Exemplo Dockerfile
 
+```
+services:
+  vsftp_ubuntu:
+    image: brgilsonsp/vsftp:v1.0
+    container_name: vsftp_ubuntu
+    volumes:
+      - ftp_winix_wms:/home/vsftpd
+      - ftp_log_winix_wms:/var/log/vsftpd
+    network_mode: bridge
+    ports:
+      - "20-21:20-21"
+      - "47400-47470:47400-47470"
+    environment:
+      - FTP_USER=adm
+      - FTP_PASS=adm123
+      - PASV_ADDRESS=127.0.0.1
+      
+volumes:
+  ftp_winix_wms:
+  ftp_log_winix_wms:    
 
+```
 
 
 
