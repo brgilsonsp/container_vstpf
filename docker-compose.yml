@@ -1,0 +1,9 @@
+services:
+  vsftp:
+    image: brgilsonsp/vsftp
+    build:
+      context: .
+      dockerfile: Dockerfile
+      no_cache: true
+      tags:
+        - "brgilsonsp/vsftp:v1.0"
